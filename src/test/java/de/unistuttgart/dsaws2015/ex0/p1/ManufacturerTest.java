@@ -8,6 +8,9 @@ public class ManufacturerTest {
 
 	@Test
 	public void test() {
+		Manufacturer x = new Manufacturer();
+		x.setName("hello");
+		assertEquals("hello", x.getName());
 		assertTrue(true);
 	}
 
