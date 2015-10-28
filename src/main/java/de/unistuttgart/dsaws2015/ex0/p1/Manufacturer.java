@@ -7,8 +7,7 @@ public class Manufacturer {
 	private String country;
 	
 	
-	public Manufacturer()
-	{
+	public Manufacturer() {
 		this.name="DefaultName";
 		this.street="DefaultStreet";
 		this.city="DefaultCity";

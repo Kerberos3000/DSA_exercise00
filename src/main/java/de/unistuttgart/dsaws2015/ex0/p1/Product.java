@@ -4,11 +4,10 @@ public class Product {
 	private String name;
 	private String description;
 	private int price;
-	private Manufacturer manufacturer; // not in UML diagramm!!! TODO clarify with group
+	private Manufacturer manufacturer; 
 	
-	public Product(String name, int price, Manufacturer manufacturer)
-	{
-		this.name = name;
+	public Product(String name, int price, Manufacturer manufacturer) {
+		this.name = name; 
 		this.price = price;
 		this.manufacturer = manufacturer;
 	}

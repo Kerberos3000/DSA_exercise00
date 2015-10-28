@@ -12,55 +12,43 @@ public class TextFinder {
 	 * @param product {@link Product} which will be searched for the string.
 	 * @param string {@link String} which is searched in the product.
 	 * @return {@link ProductFact} The enum which indicates the type of the string.
-	 * @throws IllegalArgumentException if the inpult values are not correct or the string is not
+	 * @throws IllegalArgumentException if the input values are not correct or the string is not
 	 * present in the given classes.
 	 */
-	public static ProductFact findText(Product product, String string){
+	public static ProductFact findText(Product product, String string) { 
 
 		// check for invalid input parameters (null)
-		if (string==null){
+		if (string==null) {
 			throw new IllegalArgumentException("null String not allowed!");
 		}
-		
-		if (product==null){
+		if (product==null) {
 			throw new IllegalArgumentException("null Prodcut not allowed!");
 		}
-		
-		if (product.getManufacturer()==null){
+		if (product.getManufacturer()==null) {
 			throw new IllegalArgumentException("Product is not connected to a Manufacturer");
 		}
-       
 		
 		// check the strings of the class Products
-		if (product.getName() == string){
+		if (product.getName() == string) {
 			return ProductFact.NAME;
 		}
-		
-		if (product.getDescription() == string){
+		if (product.getDescription() == string) {
 			return ProductFact.DESCRIPTION;	
 		}
-	
 		
 		// check the strings of the class Manufacturer
-		if (product.getManufacturer().getName() == string){
+		if (product.getManufacturer().getName() == string) {
 			return ProductFact.MANUFACTURER_NAME;	
 		}
-
-		if (product.getManufacturer().getStreet() == string){
+		if (product.getManufacturer().getStreet() == string) {
 			return ProductFact.MANFACTURER_STREET;	
 		}
-		
-		if(product.getManufacturer().getCity() == string){
+		if(product.getManufacturer().getCity() == string) {
 			return ProductFact.MANUFACTURER_CITY;	
 		}
-		
-		if(product.getManufacturer().getCountry() == string){
+		if(product.getManufacturer().getCountry() == string) {
 			return ProductFact.MANUFACTURER_COUNTRY;	
 		}
-		else{
-
-			// no string was found in Product and Manufacturer:
-				throw new IllegalArgumentException("String not found!");
-			}
+		throw new IllegalArgumentException("String not found!");
 	}
 }
